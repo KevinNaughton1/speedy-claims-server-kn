@@ -32,8 +32,8 @@ public class BootstrapService {
 
             InsurancePolicy policy1 = new InsurancePolicy(null, "A1234", customer1);
             InsurancePolicy policy2 = new InsurancePolicy(null, "B2345", customer1);
-            InsurancePolicy policy3 = new InsurancePolicy(null, "C1234", customer2);
-            InsurancePolicy policy4 = new InsurancePolicy(null, "D9874", customer2);
+    //        InsurancePolicy policy3 = new InsurancePolicy(null, "C1234", customer2);
+    //        InsurancePolicy policy4 = new InsurancePolicy(null, "D9874", customer2);
 
             List<InsurancePolicy> ipl1 = new ArrayList<>();
             ipl1.add(policy1);
@@ -41,8 +41,8 @@ public class BootstrapService {
             customer1.setInsurancePolicy(ipl1);
 
             List<InsurancePolicy> ipl2 = new ArrayList<>();
-            ipl2.add(policy3);
-            ipl2.add(policy4);
+            //ipl2.add(policy3);
+            //ipl2.add(policy4);
             customer2.setInsurancePolicy(ipl2);
 
             customerRepository.save(customer1);

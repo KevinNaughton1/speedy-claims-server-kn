@@ -2,8 +2,11 @@ package com.allstate.speedyclaimsserverkn.service;
 
 import com.allstate.speedyclaimsserverkn.data.ClaimsTransactionRepository;
 import com.allstate.speedyclaimsserverkn.domain.ClaimsTransaction;
+import com.allstate.speedyclaimsserverkn.dtos.ClaimDTO;
 import com.allstate.speedyclaimsserverkn.exceptions.ClaimNotFoundException;
 import com.allstate.speedyclaimsserverkn.exceptions.InvalidNewClaimsTransactionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,9 @@ public class ClaimsServiceImpl implements ClaimsService{
 
     @Autowired
     private ClaimsTransactionRepository claimsTransactionRepository;
+
+    Logger logger = LoggerFactory.getLogger(ClaimsService.class);
+
 
     @Override
     public List<ClaimsTransaction> getAllTransactions() {
@@ -52,11 +58,13 @@ public class ClaimsServiceImpl implements ClaimsService{
         if (optionalCT.isPresent()){
             return optionalCT.get();
         }
+        logger.info("There is no claims transaction with an id of " + id);
         throw new ClaimNotFoundException("There is no claims transaction with an id of " + id);
     }
 
     @Override
-    public ClaimsTransaction add(ClaimsTransaction transaction) {
+    public ClaimsTransaction add(ClaimDTO transactionDTO) {
+        ClaimsTransaction transaction = transactionDTO.toClaimsTransaction();
 
         if(transaction.getPolicyNo() == null || transaction.getClaimAmount() == null) {
             throw new InvalidNewClaimsTransactionException("Policy No and Claim Amount must be provided");

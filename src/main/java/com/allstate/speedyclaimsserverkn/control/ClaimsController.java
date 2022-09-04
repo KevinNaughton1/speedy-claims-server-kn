@@ -2,6 +2,7 @@ package com.allstate.speedyclaimsserverkn.control;
 
 
 import com.allstate.speedyclaimsserverkn.domain.ClaimsTransaction;
+import com.allstate.speedyclaimsserverkn.dtos.ClaimDTO;
 import com.allstate.speedyclaimsserverkn.service.ClaimsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -55,7 +56,7 @@ public class ClaimsController {
     }
 
     @PostMapping
-    public ClaimsTransaction addTransaction(@RequestBody ClaimsTransaction newTransaction) {
+    public ClaimsTransaction addTransaction(@RequestBody ClaimDTO newTransaction) {
         return claimsService.add(newTransaction);
     }
 

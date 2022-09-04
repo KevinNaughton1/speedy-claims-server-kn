@@ -19,12 +19,21 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, String title, String customerForename, String customerSurname, List<InsurancePolicy> insurancePolicy) {
-        this.id = id;
+    public void setTitle(String title) {
         this.title = title;
-        this.customerForename = customerForename;
+    }
+
+    public void setCustomerSurname(String customerSurname) {
         this.customerSurname = customerSurname;
+    }
+
+    public Customer(Integer custId, String title, String custForename, String custSurname, List<InsurancePolicy> insurancePolicy) {
+        this.id = custId;
+        this.title = title;
+        this.customerForename = custForename;
+        this.customerSurname = custSurname;
         this.insurancePolicy = insurancePolicy;
+
     }
 
 

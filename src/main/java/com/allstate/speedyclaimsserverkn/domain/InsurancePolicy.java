@@ -16,7 +16,7 @@ public class InsurancePolicy {
 
     String policyNumber;
     @OneToOne
-    Customer customerForename;
+    Customer custId;
 
     public InsurancePolicy() {
     }
@@ -24,7 +24,7 @@ public class InsurancePolicy {
     public InsurancePolicy(Integer id, String policyNumber, Customer customerForename) {
         this.id = id;
         this.policyNumber = policyNumber;
-        this.customerForename = customerForename;
+        this.custId = custId;
     }
 
     public Integer getId() {
@@ -45,12 +45,11 @@ public class InsurancePolicy {
 
     @JsonIgnore
 
-
-    public Customer getCustomerForename() {
-        return customerForename;
+    public Customer getCustomerId() {
+        return custId;
     }
 
-    public void setCustomerForename(Customer customerForename) {
-        this.customerForename = customerForename;
+    public void setCustomerId(Customer custId) {
+        this.custId = custId;
     }
 }

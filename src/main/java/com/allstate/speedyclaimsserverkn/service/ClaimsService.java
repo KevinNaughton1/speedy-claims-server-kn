@@ -1,6 +1,7 @@
 package com.allstate.speedyclaimsserverkn.service;
 
 import com.allstate.speedyclaimsserverkn.domain.ClaimsTransaction;
+import com.allstate.speedyclaimsserverkn.dtos.ClaimDTO;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,7 +15,7 @@ public interface ClaimsService {
     public List<ClaimsTransaction> getAllTransactionsForPolicyNo(String policyNo);
     public List<ClaimsTransaction> getAllTransactionsForDateOfClaim(LocalDate dateOfClaim);
     public ClaimsTransaction getTransactionById(Integer id);
-    public ClaimsTransaction add(ClaimsTransaction transaction);
+    public ClaimsTransaction add(ClaimDTO transaction);
     public ClaimsTransaction updateClaimsTransaction(Integer id, Map<String, String> data);
 }
 

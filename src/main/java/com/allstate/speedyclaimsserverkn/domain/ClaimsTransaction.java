@@ -18,12 +18,42 @@ public class ClaimsTransaction {
     private Double claimAmount;
     private String claimReason;
     private String claimType;
+    private String petName;
+    private String carRegistration;
+    private String houseAddress;
 
     public ClaimsTransaction() {
 
     }
 
-    public ClaimsTransaction(Integer id, LocalDate dateOfClaim, LocalDate dateOfIncident, String policyNo, String title, String custForename, String custSurname, Double claimAmount, String claimReason, String claimType) {
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
+    }
+
+    public String getCarRegistration() {
+        return carRegistration;
+    }
+
+    public void setCarRegistration(String carRegistration) {
+        this.carRegistration = carRegistration;
+    }
+
+    public String getHouseAddress() {
+        return houseAddress;
+    }
+
+    public void setHouseAddress(String houseAddress) {
+        this.houseAddress = houseAddress;
+    }
+
+    public ClaimsTransaction(Integer id, LocalDate dateOfClaim, LocalDate dateOfIncident, String policyNo,
+                             String title, String custForename, String custSurname,
+                             Double claimAmount, String claimReason, String claimType,
+                             String petName, String carRegistration, String houseAddress) {
         this.id = id;
         this.dateOfClaim = dateOfClaim;
         this.dateOfIncident = dateOfIncident;
@@ -34,6 +64,10 @@ public class ClaimsTransaction {
         this.claimAmount = claimAmount;
         this.claimReason = claimReason;
         this.claimType = claimType;
+        this.petName = petName;
+        this.carRegistration = carRegistration;
+        this.houseAddress = houseAddress;
+
     }
 
     public Integer getId() {
