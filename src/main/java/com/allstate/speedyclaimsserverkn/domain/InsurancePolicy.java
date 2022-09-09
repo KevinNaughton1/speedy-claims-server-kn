@@ -44,11 +44,11 @@ public class InsurancePolicy {
     }
 
     @JsonIgnore
-
     public Customer getCustomerId() {
         return custId;
     }
 
+    @JsonIgnore
     public void setCustomerId(Customer custId) {
         this.custId = custId;
     }
